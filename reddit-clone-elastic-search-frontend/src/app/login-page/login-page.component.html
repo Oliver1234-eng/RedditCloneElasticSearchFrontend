@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fab fa-reddit"></i>
+        My Reddit Clone
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register">
+              <i class="fas fa-user-plus">Registruj se</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">
+              <i class="fas fa-home">Prikaži objave</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/communities">
+              <i class="fas fa-users">Prikaži zajednice</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="container my-4">
+  <div class="card mx-auto" style="max-width: 800px;">
+    <div class="card-body">
+      <h1 class="text-center mb-4">Stranica za prijavu</h1>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <input type="text" [formControlName]="'username'" class="form-control" placeholder="Korisničko ime" required autofocus>
+          </div>
+          <div *ngIf="loginForm.controls.username.invalid && (loginForm.controls.username.dirty || loginForm.controls.username.touched)"
+            class="text-danger">
+            Korisničko ime je obavezno.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </div>
+            </div>
+            <input type="password" [formControlName]="'password'" class="form-control" placeholder="Lozinka" required autofocus>
+          </div>
+          <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)"
+            class="text-danger">
+            Lozinka je obavezna.
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-block mt-4 w-100 mx-auto">Prijavi se</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

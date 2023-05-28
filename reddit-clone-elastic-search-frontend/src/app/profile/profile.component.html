@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/home-page">
+        <i class="fab fa-reddit"></i>
+        My Reddit Clone
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/communities">
+              <i class="fas fa-users">Prikaži zajednice</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">
+              <i class="fas fa-user">Profil</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLink="/">
+                <i class="fas fa-sign-out-alt">Odjava</i> 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="container">
+  <h1>User Info</h1>
+  <div>
+    <i class="fas fa-user"></i> {{ user.username }}
+  </div>
+  <div>
+    <i class="fas fa-envelope"></i> {{ user.email }}
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/home-page">
+        <i class="fab fa-reddit"></i>
+        My Reddit Clone
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/communities">
+              <i class="fas fa-users">Prikaži zajednice</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">
+              <i class="fas fa-user">Profil</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLink="/">
+                <i class="fas fa-sign-out-alt">Odjava</i> 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="container my-4">
+    <div class="container">
+      <h1 class="text-center mb-4">Odaberite vrstu pretrage objava</h1>
+  
+      <div class="d-grid gap-3">
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-title">
+          <span>Pretraga objava po naslovu</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-text">
+          <span>Pretraga objava po tekstu</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-user">
+          <span>Pretraga objava po autoru</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-flair">
+          <span>Pretraga objava po tagu</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-community">
+          <span>Pretraga objava po zajednici</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-comment-count">
+          <span>Pretraga objava po broju komentara</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-comment-count-greater-than">
+          <span>Pretraga objava po broju komentara veći od</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-comment-count-less-than">
+          <span>Pretraga objava po broju komentara manji od</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-karma">
+          <span>Pretraga objava po karmi</span>
+        </a>
+  
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-karma-greater-than">
+          <span>Pretraga objava po karmi veći od</span>
+        </a>
+
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-karma-less-than">
+          <span>Pretraga objava po karmi manji od</span>
+        </a>
+
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-flair-and-user">
+          <span>Pretraga objava po tagu i autoru (BooleanQuery AND)</span>
+        </a>
+
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-flair-or-user">
+          <span>Pretraga objava po tagu ili autoru (BooleanQuery OR)</span>
+        </a>
+
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-title-fuzzy-query">
+          <span>Pretraga objava po naslovu (FuzzyQuery)</span>
+        </a>
+
+        <a class="btn btn-primary btn-lg" routerLink="/find-post-by-text-phrase-query">
+            <span>Pretraga objava po tekstu (PhraseQuery)</span>
+          </a>
+      </div>
+    </div>
+</div>

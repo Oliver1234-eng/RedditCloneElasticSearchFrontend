@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/choose-community-search">
+        <i class="fab fa-reddit"></i>
+        My Reddit Clone
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/communities">
+              <i class="fas fa-users">Prikaži zajednice</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">
+              <i class="fas fa-user">Profil</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLink="/">
+                <i class="fas fa-sign-out-alt">Odjava</i> 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="container my-4">
+  <h2 class="text-center">Pretraga zajednica po opsegu broja objava</h2>
+  <div class="input-group mb-3">
+    <input type="number" class="form-control" [(ngModel)]="postCount1" placeholder="Unesite donju granicu">
+    <input type="number" class="form-control" [(ngModel)]="postCount2" placeholder="Unesite gornju granicu">
+    <button class="btn btn-primary" (click)="searchByPostCount(postCount1, postCount2)">Pretraži</button>
+  </div>
+  <div *ngIf="searchResults" class="text-center">
+    <h3 class="mb-3">Rezultati pretrage:</h3>
+    <ul class="list-unstyled">
+      <li *ngFor="let community of searchResults" class="mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Naziv zajednice:</h4>
+            <p class="card-text"><b>{{ community.name }}</b></p>
+            <h4 class="card-title">Opis zajednice:</h4>
+            <p class="card-text">{{ community.description }}</p>
+            <h4 class="card-title">Pravila zajednice:</h4>
+            <p class="card-text">{{ community.rules }}</p>
+            <h4 class="card-title">Razlog suspendovanja:</h4>
+            <p class="card-text">{{ community.suspendedReason }}</p>
+            <h4 class="card-title">Moderator zajednice:</h4>
+            <p class="card-text">{{ community.user }}</p>
+            <h4 class="card-title">Broj objava u zajednici:</h4>
+            <p class="card-text"><b><span style="font-size: 30px;">{{ community.postCount }}</span></b></p>
+            <h4 class="card-title">Prosečna karma u zajednici:</h4>
+            <p class="card-text">{{ community.averageKarma }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

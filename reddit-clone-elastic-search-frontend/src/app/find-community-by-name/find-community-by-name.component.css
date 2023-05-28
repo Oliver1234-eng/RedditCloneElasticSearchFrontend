@@ -1,0 +1,12 @@
+h1, h2, h3, h4 {
+    color: #0079d3;
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+  
+.card-text {
+    margin-top: 0;
+}
