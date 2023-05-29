@@ -44,6 +44,12 @@ import { FindPostByKarmaGreaterThanComponent } from './find-post-by-karma-greate
 import { FindPostByKarmaLessThanComponent } from './find-post-by-karma-less-than/find-post-by-karma-less-than.component';
 import { FindPostByFlairAndUserComponent } from './find-post-by-flair-and-user/find-post-by-flair-and-user.component';
 import { FindPostByFlairOrUserComponent } from './find-post-by-flair-or-user/find-post-by-flair-or-user.component';
+import { AddNewPostComponent } from './add-new-post/add-new-post.component';
+import { AddNewCommunityComponent } from './add-new-community/add-new-community.component';
+import { AddNewCommunityPdfComponent } from './add-new-community-pdf/add-new-community-pdf.component';
+import { AddNewPostPdfComponent } from './add-new-post-pdf/add-new-post-pdf.component';
+import { FindPostByCommentTextComponent } from './find-post-by-comment-text/find-post-by-comment-text.component';
+import { AddNewCommentComponent } from './add-new-comment/add-new-comment.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +90,13 @@ import { FindPostByFlairOrUserComponent } from './find-post-by-flair-or-user/fin
     FindPostByKarmaGreaterThanComponent,
     FindPostByKarmaLessThanComponent,
     FindPostByFlairAndUserComponent,
-    FindPostByFlairOrUserComponent
+    FindPostByFlairOrUserComponent,
+    AddNewPostComponent,
+    AddNewCommunityComponent,
+    AddNewCommunityPdfComponent,
+    AddNewPostPdfComponent,
+    FindPostByCommentTextComponent,
+    AddNewCommentComponent
   ],
   imports: [
     BrowserModule,

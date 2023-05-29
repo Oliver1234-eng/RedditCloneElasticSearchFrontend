@@ -12,6 +12,7 @@ export class PostService {
   private findPostByUser = 'http://localhost:8080/api/v1/postDocument/user';
   private findPostByFlair = 'http://localhost:8080/api/v1/postDocument/flair';
   private findPostByCommunity = 'http://localhost:8080/api/v1/postDocument/community';
+  private findPostByCommentText = 'http://localhost:8080/api/v1/commentDocument/text';
   private findPostByCommentCount = 'http://localhost:8080/api/v1/postDocument/commentCount';
   private findPostByCommentCountGreaterThan = 'http://localhost:8080/api/v1/postDocument/commentCountGreaterThan';
   private findPostByCommentCountLessThan = 'http://localhost:8080/api/v1/postDocument/commentCountLessThan';
@@ -22,6 +23,9 @@ export class PostService {
   private findPostByFlairOrUser = 'http://localhost:8080/api/v1/postDocument';
   private findPostByTitleFuzzyQuery = 'http://localhost:8080/api/v1/postDocument';
   private findPostByTextPhraseQuery = 'http://localhost:8080/api/v1/postDocument';
+  private addNewPost = 'http://localhost:8080/api/v1/postDocument';
+  private addNewPostPDF = 'http://localhost:8080/api/v1/postDocument/pdf';
+  private addNewComment = 'http://localhost:8080/api/v1/commentDocument';
 
   constructor(private http: HttpClient) { }
 
@@ -48,6 +52,11 @@ export class PostService {
   searchPostByCommunity(community: string): Observable<any> {
     const requestBody = { community: community };
     return this.http.post(this.findPostByCommunity, requestBody);
+  }
+
+  searchPostByCommentText(text: string): Observable<any> {
+    const requestBody = { text: text };
+    return this.http.post(this.findPostByCommentText, requestBody);
   }
 
   getPostDocumentsByCommentCount(commentCount1: number, commentCount2: number): Observable<any> {
@@ -98,5 +107,17 @@ export class PostService {
   getPostByTextPhraseQuery(text: string): Observable<any> {
     const url = `${this.findPostByTextPhraseQuery}/searchText?searchText=${encodeURIComponent(text)}`;
     return this.http.get(url);
+  }
+
+  addPost(postData: any): Observable<any> {
+    return this.http.post<any>(this.addNewPost, postData);
+  }
+
+  addPostWithPDF(formData: FormData) {
+    return this.http.post(this.addNewPostPDF, formData);
+  }
+
+  addComment(postData: any): Observable<any> {
+    return this.http.post<any>(this.addNewComment, postData);
   }
 }

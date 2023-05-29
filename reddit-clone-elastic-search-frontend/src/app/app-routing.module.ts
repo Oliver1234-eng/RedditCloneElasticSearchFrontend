@@ -38,6 +38,12 @@ import { FindPostByKarmaGreaterThanComponent } from './find-post-by-karma-greate
 import { FindPostByKarmaLessThanComponent } from './find-post-by-karma-less-than/find-post-by-karma-less-than.component';
 import { FindPostByFlairAndUserComponent } from './find-post-by-flair-and-user/find-post-by-flair-and-user.component';
 import { FindPostByFlairOrUserComponent } from './find-post-by-flair-or-user/find-post-by-flair-or-user.component';
+import { AddNewPostComponent } from './add-new-post/add-new-post.component';
+import { AddNewCommunityComponent } from './add-new-community/add-new-community.component';
+import { AddNewPostPdfComponent } from './add-new-post-pdf/add-new-post-pdf.component';
+import { AddNewCommunityPdfComponent } from './add-new-community-pdf/add-new-community-pdf.component';
+import { FindPostByCommentTextComponent } from './find-post-by-comment-text/find-post-by-comment-text.component';
+import { AddNewCommentComponent } from './add-new-comment/add-new-comment.component';
 
 
 const routes: Routes = [
@@ -78,6 +84,12 @@ const routes: Routes = [
   {path: 'find-post-by-karma-less-than', component: FindPostByKarmaLessThanComponent},
   {path: 'find-post-by-flair-and-user', component: FindPostByFlairAndUserComponent},
   {path: 'find-post-by-flair-or-user', component: FindPostByFlairOrUserComponent},
+  {path: 'add-new-post', component: AddNewPostComponent},
+  {path: 'add-new-community', component: AddNewCommunityComponent},
+  {path: 'add-new-post-pdf', component: AddNewPostPdfComponent},
+  {path: 'add-new-community-pdf', component: AddNewCommunityPdfComponent},
+  {path: 'find-post-by-comment-text', component: FindPostByCommentTextComponent},
+  {path: 'add-new-comment', component: AddNewCommentComponent},
 ];
 
 @NgModule({

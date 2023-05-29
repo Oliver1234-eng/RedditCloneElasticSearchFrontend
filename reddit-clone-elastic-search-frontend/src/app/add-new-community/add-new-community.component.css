@@ -1,0 +1,40 @@
+h1, h2, h3, h4 {
+    color: #0079d3;
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+  
+.card-text {
+    margin-top: 0;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+  }
+  
+.card h2 {
+    color: #333;
+}
+  
+.form-group label {
+    font-weight: bold;
+}
+  
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+  
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.add-community-button {
+    width: 100%;
+}

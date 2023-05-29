@@ -21,6 +21,8 @@ export class CommunityService {
   private findCommunityByNameOrUser = 'http://localhost:8080/api/v1/communityDocument';
   private findCommunityByNameFuzzyQuery = 'http://localhost:8080/api/v1/communityDocument';
   private findCommunityByDescriptionPhraseQuery = 'http://localhost:8080/api/v1/communityDocument';
+  private addNewCommunity = 'http://localhost:8080/api/v1/communityDocument';
+  private addNewCommunityPDF = 'http://localhost:8080/api/v1/communityDocument/pdf';
 
   constructor(private http: HttpClient) { }
 
@@ -92,5 +94,13 @@ export class CommunityService {
   getCommunityByDescriptionPhraseQuery(description: string): Observable<any> {
     const url = `${this.findCommunityByDescriptionPhraseQuery}/searchDescription?searchDescription=${encodeURIComponent(description)}`;
     return this.http.get(url);
+  }
+
+  addCommunity(communityData: any): Observable<any> {
+    return this.http.post<any>(this.addNewCommunity, communityData);
+  }
+
+  addCommunityWithPDF(formData: FormData) {
+    return this.http.post(this.addNewCommunityPDF, formData);
   }
 }

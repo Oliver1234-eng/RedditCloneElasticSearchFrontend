@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/home-page">
+        <i class="fab fa-reddit"></i>
+        My Reddit Clone
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/communities">
+              <i class="fas fa-users">Prikaži zajednice</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profile">
+              <i class="fas fa-user">Profil</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" routerLink="/">
+                <i class="fas fa-sign-out-alt">Odjava</i> 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<form (ngSubmit)="addCommunity()" enctype="multipart/form-data" class="card p-4 mx-auto mt-4" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Dodavanje nove zajednice (sa PDF)</h2>
+  
+    <div class="form-group">
+      <label for="pdfFile">PDF fajl:</label><br>
+      <input type="file" accept=".pdf" id="pdfFile" (change)="onFileSelected($event)" class="form-control-file">
+    </div>
+  
+    <div class="form-group">
+      <label for="rules">Pravila:</label>
+      <input type="text" [(ngModel)]="rules" name="rules" id="rules" class="form-control" required>
+      <div *ngIf="communityForm.controls['rules'].invalid && communityForm.controls['rules'].touched" class="text-danger">
+        Pravila su obavezna.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="suspendedReason">Razlog suspendovanja:</label>
+      <input type="text" [(ngModel)]="suspendedReason" name="suspendedReason" id="suspendedReason" class="form-control" required>
+      <div *ngIf="communityForm.controls['suspendedReason'].invalid && communityForm.controls['suspendedReason'].touched" class="text-danger">
+        Razlog suspendovanja je obavezno polje.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="user">Moderator:</label>
+      <input type="text" [(ngModel)]="user" name="user" id="user" class="form-control" required>
+      <div *ngIf="communityForm.controls['user'].invalid && communityForm.controls['user'].touched" class="text-danger">
+        Korisničko ime moderatora zajednice je obavezno polje.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="postCount">Broj objava unutar zajednice:</label>
+      <input type="number" [(ngModel)]="postCount" name="postCount" id="postCount" class="form-control" required>
+      <div *ngIf="communityForm.controls['postCount'].invalid && communityForm.controls['postCount'].touched" class="text-danger">
+        Broj objava je obavezno polje.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="averageKarma">Prosečna karma zajednice:</label>
+      <input type="number" [(ngModel)]="averageKarma" name="averageKarma" id="averageKarma" class="form-control" required>
+      <div *ngIf="communityForm.controls['averageKarma'].invalid && communityForm.controls['averageKarma'].touched" class="text-danger">
+        Prosečna karma je obavezno polje.
+      </div>
+    </div>
+  
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-primary add-community-button"><i class="fa fa-plus"></i> Dodaj zajednicu</button>
+    </div>
+</form>
